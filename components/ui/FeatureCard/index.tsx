@@ -38,7 +38,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
 }) => {
   return (
     <div
-      className={`group relative overflow-hidden rounded-2xl border border-neutral-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${className}`}
+      className={`group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${className}`}
     >
       {/* Gradient hover effect on right top - matches icon color */}
       <div
