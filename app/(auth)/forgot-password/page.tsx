@@ -1,11 +1,26 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { AuthLayout } from '@/components/auth/AuthLayout';
 import { EmailInput } from '@/components/auth/EmailInput';
 import { GradientButton } from '@/components/auth/GradientButton';
 
 export default function ForgotPasswordPage() {
+  const router = useRouter();
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    // TODO: Call your API to send reset email and generate token/PIN
+    // Example:
+    // await fetch('/api/auth/forgot-password', { ... });
+
+    // For now, navigate directly to the reset password page.
+    // Later you can add token or PIN to this URL from the API response.
+    router.push('/reset-password');
+  };
+
   return (
     <AuthLayout
       leftContent={{
@@ -87,7 +102,7 @@ export default function ForgotPasswordPage() {
         </div>
 
         {/* Form */}
-        <form className="space-y-5">
+        <form className="space-y-5" onSubmit={handleSubmit}>
           <EmailInput
             label="Email address"
             placeholder="name@example.com"
