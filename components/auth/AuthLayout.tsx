@@ -21,7 +21,7 @@ export interface AuthLayoutProps {
     securityCard?: {
       icon: React.ReactNode;
       title: string;
-      description: string;
+      description: string | React.ReactNode;
     };
   };
   gradientFrom?: string;
@@ -57,7 +57,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({
           style={{ animationDelay: '1s' }}
         />
 
-        <div className="relative z-10 max-w-md text-center">
+        <div className="relative z-10 flex max-w-md flex-col space-y-2 text-center">
           {/* Icon */}
           <div className="mb-8 flex justify-center">
             <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-white shadow-lg">
@@ -110,15 +110,21 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({
           {/* Security Card */}
           {leftContent.securityCard && (
             <div className="rounded-2xl bg-white/80 p-6 shadow-sm backdrop-blur-sm">
-              <div className="mb-3 flex items-center gap-3">
+              <div className="mb-3 flex items-center justify-center gap-3">
                 {leftContent.securityCard.icon}
                 <h3 className="text-sm font-semibold text-neutral-700">
                   {leftContent.securityCard.title}
                 </h3>
               </div>
-              <p className="text-xs text-neutral-600">
-                {leftContent.securityCard.description}
-              </p>
+              {typeof leftContent.securityCard.description === 'string' ? (
+                <p className="text-xs text-neutral-600">
+                  {leftContent.securityCard.description}
+                </p>
+              ) : (
+                <div className="text-xs text-neutral-600">
+                  {leftContent.securityCard.description}
+                </div>
+              )}
             </div>
           )}
         </div>
