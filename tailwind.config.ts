@@ -89,6 +89,18 @@ const config: Config = {
           800: '#9D174D',
           900: '#831843',
         },
+        yellow: {
+          50: '#FEFCE8',
+          100: '#FEF9C3',
+          200: '#FEF08A',
+          300: '#FDE047',
+          400: '#FACC15', // For gradient buttons
+          500: '#EAB308',
+          600: '#CA8A04',
+          700: '#A16207',
+          800: '#854D0E',
+          900: '#713F12',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -97,6 +109,15 @@ const config: Config = {
         soft: '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
         medium:
           '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.2s ease-in-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(-10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
       },
     },
   },
