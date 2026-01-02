@@ -1,11 +1,9 @@
 import { ReactNode } from 'react';
 
-export default function AuthenticatedLayout({
-  children,
-}: {
-  children: ReactNode;
-}) {
-  // Add authentication check here
-  // For now, just render children
+/**
+ * Layout for authentication pages (signin, signup, forgot-password, reset-password).
+ * These pages should NOT be protected - they are public access pages.
+ */
+export default function AuthLayout({ children }: { children: ReactNode }) {
   return <>{children}</>;
 }
