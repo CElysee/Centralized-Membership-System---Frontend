@@ -6,22 +6,35 @@ export interface CheckboxProps extends Omit<
 > {
   label?: string;
   error?: string;
+  indeterminate?: boolean;
 }
 
 export const Checkbox: React.FC<CheckboxProps> = ({
   label,
   error,
   className = '',
+  indeterminate,
+  checked,
   ...props
 }) => {
+  const checkboxRef = React.useRef<HTMLInputElement>(null);
+
+  React.useEffect(() => {
+    if (checkboxRef.current) {
+      checkboxRef.current.indeterminate = indeterminate ?? false;
+    }
+  }, [indeterminate]);
+
   return (
     <div className="w-full">
       <label className="flex cursor-pointer items-center">
         <input
+          ref={checkboxRef}
           type="checkbox"
-          className={`h-5 w-5 rounded border-neutral-300 text-brand-orange-500 transition-all duration-200 focus:ring-2 focus:ring-brand-orange-500 focus:ring-offset-2 ${
+          checked={indeterminate ? false : checked}
+          className={`h-5 w-5 rounded border-neutral-200 text-brand-orange-500 transition-all duration-200 focus:ring-2 focus:ring-brand-orange-500 focus:ring-offset-2 ${
             error ? 'border-red-300' : ''
-          } ${className}`}
+          } ${indeterminate ? 'border-brand-orange-500 bg-brand-orange-500' : ''} ${className}`}
           {...props}
         />
         {label && (

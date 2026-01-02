@@ -15,7 +15,15 @@ export { Drawer } from './Drawer';
 export type { DrawerProps } from './Drawer';
 export { Toast } from './Toast';
 export type { ToastProps, ToastType } from './Toast';
-export { Table } from './Table';
+export {
+  Table,
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableCell,
+  TableColumn,
+  TableSkeleton,
+} from './Table';
 export type { TableProps, Column } from './Table';
 export { Pagination } from './Pagination';
 export type { PaginationProps } from './Pagination';
