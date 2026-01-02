@@ -2,7 +2,7 @@ import { Hero, Section, FeatureCard, StatsCard } from '@/components/ui';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white pt-16 lg:pt-20">
       {/* Hero Section */}
       <Hero
         tag="Centralized Membership Management"

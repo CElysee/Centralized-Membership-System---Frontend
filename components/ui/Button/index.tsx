@@ -12,7 +12,7 @@ const variantClasses = {
   primary:
     'bg-brand-orange-500 text-white hover:bg-brand-orange-600 active:bg-brand-orange-700 shadow-sm hover:shadow-md transition-all duration-200',
   secondary:
-    'bg-white text-neutral-700 border border-neutral-100 hover:bg-neutral-50 hover:border-neutral-200 active:bg-neutral-100 shadow-sm hover:shadow transition-all duration-200',
+    'bg-white text-neutral-700 border border-neutral-200 hover:bg-neutral-50 hover:border-neutral-300 active:bg-neutral-100 shadow-sm hover:shadow transition-all duration-200',
   outline:
     'border-2 border-brand-orange-500 text-brand-orange-500 hover:bg-brand-orange-50 active:bg-brand-orange-100 transition-all duration-200',
   ghost:
