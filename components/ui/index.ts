@@ -71,3 +71,5 @@ export { LoadingButton } from './LoadingButton';
 export type { LoadingButtonProps } from './LoadingButton';
 export { ConfirmDialog } from './ConfirmDialog';
 export type { ConfirmDialogProps } from './ConfirmDialog';
+export { AssociationCard } from './AssociationCard';
+export type { AssociationCardProps } from './AssociationCard';
