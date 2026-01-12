@@ -11,6 +11,7 @@ export interface StatsCardProps {
     isPositive: boolean;
   };
   className?: string;
+  valueClassName?: string;
 }
 
 export const StatsCard: React.FC<StatsCardProps> = ({
@@ -19,6 +20,7 @@ export const StatsCard: React.FC<StatsCardProps> = ({
   icon,
   trend,
   className = '',
+  valueClassName = '',
 }) => {
   return (
     <div
@@ -37,7 +39,9 @@ export const StatsCard: React.FC<StatsCardProps> = ({
               {icon}
             </div>
           )}
-          <p className="text-3xl font-bold text-neutral-900 transition-colors duration-300 group-hover:text-brand-purple-600">
+          <p
+            className={`text-3xl font-bold text-neutral-900 transition-colors duration-300 group-hover:text-brand-purple-600 ${valueClassName}`}
+          >
             {value}
           </p>
           <p className="mt-2 text-sm font-medium text-neutral-600">{label}</p>

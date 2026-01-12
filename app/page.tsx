@@ -1,4 +1,12 @@
-import { Hero, Section, FeatureCard, StatsCard } from '@/components/ui';
+import {
+  Hero,
+  Section,
+  FeatureCard,
+  StatsCard,
+  AssociationCard,
+  Badge,
+  Button,
+} from '@/components/ui';
 
 export default function Home() {
   return (
@@ -290,6 +298,121 @@ export default function Home() {
               'Central admin',
             ]}
           />
+        </div>
+      </Section>
+      <Section background="white" className="py-24">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-24">
+          {/* Left Content */}
+          <div>
+            <Badge
+              variant="warning"
+              className="mb-6 border-brand-orange-200 bg-brand-orange-50 text-brand-orange-600"
+            >
+              <span className="flex items-center gap-1">
+                <svg
+                  className="h-3 w-3"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                  />
+                </svg>
+                Affiliated Associations
+              </span>
+            </Badge>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl">
+              One System,{' '}
+              <span className="text-brand-orange-500">Many Associations</span>
+            </h2>
+            <p className="mb-8 text-lg leading-relaxed text-neutral-600">
+              Our centralized system supports multiple associations under the
+              RCOT umbrella, each with their own branding and member base while
+              sharing a unified database and administrative tools.
+            </p>
+
+            <div className="mb-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <StatsCard
+                value="25+"
+                label="Active Associations"
+                className="shadow-md"
+                valueClassName="text-brand-orange-500"
+              />
+              <StatsCard
+                value="12,847"
+                label="Total Members"
+                className="shadow-md"
+                valueClassName="text-brand-purple-500"
+              />
+            </div>
+
+            <Button size="lg" className="shadow-lg shadow-brand-orange-500/20">
+              View All Associations
+              <svg
+                className="ml-2 h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </Button>
+          </div>
+
+          {/* Right Grid */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <AssociationCard
+              initials="RC"
+              color="orange"
+              name="RCOT Main Chapter"
+              memberCount="5,420"
+              location="National"
+            />
+            <AssociationCard
+              initials="NR"
+              color="blue"
+              name="Northern Regional..."
+              memberCount="1,890"
+              location="North"
+            />
+            <AssociationCard
+              initials="WD"
+              color="purple"
+              name="Western Division"
+              memberCount="2,340"
+              location="West"
+            />
+            <AssociationCard
+              initials="EA"
+              color="green"
+              name="Eastern Associates"
+              memberCount="1,650"
+              location="East"
+            />
+            <AssociationCard
+              initials="SC"
+              color="purple"
+              name="Southern Chapter"
+              memberCount="980"
+              location="South"
+            />
+            <AssociationCard
+              initials="CH"
+              color="pink"
+              name="Central Hub"
+              memberCount="567"
+              location="Central"
+            />
+          </div>
         </div>
       </Section>
     </main>
